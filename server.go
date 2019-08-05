@@ -4,15 +4,20 @@
 
 package coschedule
 
-import (
-	"sync"
-)
-
 type Client struct {
 	Addr          string
 	localDocState *DocumentState
 }
 
-type DocumentState struct {
-	sync.Locker
+func (d *DocumentState) AddToRenderQueue(c *Client) chan DocumentState {
+	if d.Viewers == nil {
+		d.Viewers = make(map[*Client]chan DocumentState)
+		d.Viewers[c] = make(chan DocumentState)
+	}
+	if q, ok := d.Viewers[c]; ok {
+		return q
+	}
+	cn := make(chan DocumentState)
+	d.Viewers[c] = cn
+	return cn
 }
