@@ -2,7 +2,7 @@ Coschedule is just a prototype of an idea I had about a collaberative schedule (
 
 <strong> *_This package may be incomplete or non-functioning._* </strong>
 
-<sub> *May also become stale, and unmaintained without notice. <sup> __Consider this notice__ ;) ) </sup> </sub>
+<sup> *May also become stale, and unmaintained without notice. <sub> __Consider this notice__ ;) ) </sub> </sup>
 
 ****Copyright 2019 kdevb0x Co. Ltd. ****
 
